@@ -1,10 +1,13 @@
 package com.mussees.go.azzerrifi.gomusees;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class RechercheMuseeActivity extends Activity {
@@ -39,7 +42,11 @@ public class RechercheMuseeActivity extends Activity {
     }
 
     public void goRecherche(View view) {
+        TextView textView = (TextView) findViewById(R.id.editTextRecherche);
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Musées à proximiter ");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
 
-
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
     }
 }

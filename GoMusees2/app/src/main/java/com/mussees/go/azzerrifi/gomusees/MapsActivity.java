@@ -18,6 +18,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
     private LocationManager locationManager;
     private GoogleMap gMap;
     private Marker marker;
+    private Location location;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -26,8 +27,13 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
         //récupérez la référence de votre carte
         gMap = ((MapFragment)getFragmentManager().findFragmentById(R.id.map)).getMap();
+
         //Ajout d’un marqueur
-        marker = gMap.addMarker(new MarkerOptions().title("Vous êtes ici").position(new LatLng(0, 0)));
+        marker = gMap.addMarker(new MarkerOptions().title("Vous êtes ici").position(new LatLng(0,0)));
+
+        gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(46, 2), 15));
+
+       // onMapReady(gMap);
     }
     @Override
     public void onResume() {
@@ -72,6 +78,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
         msg.append(location.getLatitude());
         msg.append( "; lng : ");
         msg.append(location.getLongitude());
+        this.location = location;
         gMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 15));
         marker.setPosition(new LatLng(location.getLatitude(), location.getLongitude()));
 
@@ -96,4 +103,16 @@ public class MapsActivity extends FragmentActivity implements LocationListener {
 
     @Override
     public void onStatusChanged(final String provider, final int status, final Bundle extras) { }
+
+    public void onMapReady(GoogleMap map) {
+        LatLng sydney = new LatLng(-33.867, 151.206);
+
+        map.setMyLocationEnabled(true);
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
+
+        map.addMarker(new MarkerOptions()
+                .title("Sydney")
+                .snippet("The most populous city in Australia.")
+                .position(sydney));
+    }
 }

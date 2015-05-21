@@ -46,7 +46,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="Musées à proximiter"
         android:id="@+id/button2"
         android:minHeight="60dp"
         android:minWidth="240dp"
@@ -54,7 +54,9 @@
         android:backgroundTint="#d3733e27"
         android:layout_below="@+id/button"
         android:layout_alignLeft="@+id/button3"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:onClick="MuseesProximiter"
+        android:nestedScrollingEnabled="false" />
 
     <Button
         android:layout_width="wrap_content"
