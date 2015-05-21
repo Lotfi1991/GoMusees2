@@ -17,8 +17,20 @@ public class MenuActivity extends Activity {
     }
 
     public void RchMusee(View view) {
-        Intent i = new Intent(MenuActivity.this, RechercheMuseeActivity.class);
-        startActivity(i);
+       // Intent i = new Intent(MenuActivity.this, RechercheMuseeActivity.class);
+       // startActivity(i);
+        TextView textView = (TextView) findViewById(R.id.editTextmenu);
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q="+textView.getText().toString());
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
+    }
+
+    public void RchMuseeRg(View view) {
+         Intent i = new Intent(MenuActivity.this, RechercheMuseeActivity.class);
+         startActivity(i);
+
     }
 
     public void museesProche(View view) {

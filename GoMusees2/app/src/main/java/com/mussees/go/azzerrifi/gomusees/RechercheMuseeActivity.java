@@ -41,11 +41,10 @@ public class RechercheMuseeActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goRecherche(View view) {
-        TextView textView = (TextView) findViewById(R.id.editTextRecherche);
-        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Musées à proximiter ");
+    public void picardy(View view) {
+        TextView textView = (TextView) findViewById(R.id.editTextRegion);
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=Musée "+textView.getText().toString());
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-
         mapIntent.setPackage("com.google.android.apps.maps");
         startActivity(mapIntent);
     }

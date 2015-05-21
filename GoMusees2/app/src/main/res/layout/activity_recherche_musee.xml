@@ -1,50 +1,45 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fffff8ec"
+    android:background="@drawable/bgrg3"
     tools:context="com.mussees.go.azzerrifi.gomusees.RechercheMuseeActivity">
 
 
     <!-- This FrameLayout insets its children based on system windows using
          android:fitsSystemWindows. -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        android:background="#e6bfa559">
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="67dp"
-            android:layout_height="50dp"
-            android:text="Go"
-            android:id="@+id/button5"
-            android:layout_gravity="right|top"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:onClick="goRecherche" />
-
-        <EditText
-            android:layout_width="242dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextRecherche"
-            android:layout_gravity="left|top"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:background="#a4ffe3b0"
-            android:autoText="true"
-            android:height="40dp" />
-
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="483dp"
-            android:id="@+id/listView"
-            android:layout_gravity="center_horizontal|bottom"
-            android:background="#a4ffe3b0" />
-
-    </FrameLayout>
 
 
-</FrameLayout>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextRegion"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_toStartOf="@+id/imageButton"
+        android:minLines="1"
+        android:maxLines="1"
+        android:maxHeight="220dp"
+        android:maxWidth="40dp"
+        android:text="Nom de la région"
+        android:autoText="false"
+        android:textIsSelectable="false" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:background="@android:drawable/ic_search_category_default"
+        android:minWidth="40dp"
+        android:minHeight="30dp"
+        android:layout_alignBottom="@+id/editTextRegion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:onClick="picardy"
+        android:layout_marginTop="50dp" />
+
+</RelativeLayout>
 

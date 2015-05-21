@@ -3,31 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.mussees.go.azzerrifi.gomusees.MenuActivity"
-    android:background="#a4ffe3b0">
+    android:background="@drawable/bg4">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
-        android:background="@drawable/logo"
-        android:layout_marginTop="39dp"
+        android:background="@drawable/logo3"
         android:layout_marginLeft="10dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Trouver une musée"
-        android:id="@+id/button3"
-        android:minHeight="60dp"
-        android:minWidth="240dp"
-        android:minLines="1"
-        android:backgroundTint="#d3733e27"
-        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp"
-        android:onClick="RchMusee" />
+        android:layout_marginTop="28dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -37,37 +23,74 @@
         android:minHeight="60dp"
         android:minWidth="240dp"
         android:minLines="1"
-        android:backgroundTint="#d3733e27"
-        android:layout_below="@+id/button3"
-        android:layout_alignStart="@+id/button3"
-        android:layout_marginTop="20dp"
-        android:onClick="museesProche" />
+        android:onClick="museesProche"
+        android:background="@drawable/btn1"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rechercher"
+        android:id="@+id/button2"
+        android:minHeight="60dp"
+        android:minWidth="240dp"
+        android:minLines="1"
+        android:onClick="RchMusee"
+        android:nestedScrollingEnabled="true"
+        android:background="@drawable/btn1"
+        android:paddingEnd="@dimen/abc_action_button_min_height_material"
+        android:paddingStart="@dimen/abc_action_button_min_width_overflow_material"
+        android:layout_below="@+id/editTextmenu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recherche par région"
+        android:id="@+id/button4"
+        android:minHeight="60dp"
+        android:minWidth="240dp"
+        android:minLines="1"
+        android:background="@drawable/btn1"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:onClick="RchMuseeRg"
+        android:nestedScrollingEnabled="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextmenu"
+        android:minWidth="280dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:minHeight="40dp"
+        android:maxLines="1"
+        android:maxWidth="280dp"
+        android:minLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="Nom de la musée" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Musées à proximiter"
-        android:id="@+id/button2"
+        android:id="@+id/button3"
         android:minHeight="60dp"
         android:minWidth="240dp"
         android:minLines="1"
-        android:backgroundTint="#d3733e27"
-        android:layout_below="@+id/button"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_marginTop="20dp"
         android:onClick="MuseesProximiter"
-        android:nestedScrollingEnabled="false" />
+        android:nestedScrollingEnabled="true"
+        android:background="@drawable/btn1"
+        android:layout_below="@+id/button4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button4"
-        android:minHeight="60dp"
-        android:minWidth="240dp"
-        android:minLines="1"
-        android:backgroundTint="#d3733e27"
-        android:layout_below="@+id/button2"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_marginTop="20dp" />
 </RelativeLayout>
